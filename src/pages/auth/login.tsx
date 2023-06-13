@@ -22,7 +22,6 @@ const LogIn = () => {
         const token = data.data.token
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
         const decode: any = jwt(token)
-        console.log(decode)
         cookies.set('jwt_authorization', token, {
           expires: new Date(decode.exp * 1000),
         })
